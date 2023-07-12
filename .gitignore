@@ -11,11 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-src
-gulpfile.js
-package-lock.json
-package.json
-README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

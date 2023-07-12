@@ -1,0 +1,488 @@
+.root {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  &--hidden {
+    overflow: hidden;
+  }
+  &__sign-up {}
+}
+
+.sign-up {
+  max-width: 800px;
+  background-color: $backgroundSignUp;
+  margin: 0 auto;
+  &__container {
+    max-width: 665px;
+    padding: 60px 67px;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    @media screen and (max-width: 680px) {
+      padding: 30px;
+    }
+    @media screen and (max-width: 610px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content max-content;
+    }
+    @media screen and (max-width: 430px) {
+      padding: 10px;
+    }
+  }
+  &__left {
+    max-width: 138px;
+    background-color: $signUpLeftBackgroundColor;
+    display: flex;
+    align-items: flex-end;
+    @media screen and (max-width: 610px) {
+      max-width: 100%;
+    }
+  }
+  &__text {
+    margin: 0;
+    padding: 12px 0 50px 80px;
+    font-family: $fontFamilyPTSans;
+    font-weight: $fontWeight400;
+    font-style: $fontStyleNormal;
+    font-size: $fontSizeH1;
+    line-height: $lineHeightH1;
+    letter-spacing: $letterSpacingH1;
+    color: $colorWhite;
+    transform: rotate(-90deg);
+    @media screen and (max-width: 610px) {
+      padding: 15px;
+      transform: rotate(0deg);
+      font-size: $fontSizeH2;
+      line-height: $lineHeightH2;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 270px;
+    }
+  }
+  &__right {
+    max-width: 528px;
+    min-height: 480px;
+    background-color: $colorWhite;
+    position: relative;
+    overflow: hidden;
+    @media screen and (max-width: 610px) {
+      max-width: 100%;
+      min-height: 100%;
+    }
+    &--container {
+      max-width: 485px;
+      padding: 39px 22px 33px;
+      display: grid;
+      grid-template-rows: min-content min-content 1fr;
+      @media screen and (max-width: 610px) {
+        padding: 15px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: $fontSizeH2;
+    line-height: $lineHeightH2;
+    letter-spacing: $letterSpacingH2;
+    color: $colorBlack;
+    font-family: $fontFamilyWorkSans;
+    font-weight: $fontWeight600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 500px;
+    @media screen and (max-width: 780px) {
+      max-width: 400px;
+    }
+    @media screen and (max-width: 560px) {
+      max-width: 270px;
+      white-space: normal;
+    }
+  }
+  &__subtitle {
+    margin: 0;
+    font-family: $fontFamilyWorkSans;
+    color: $colorBlack;
+    font-size: $fontSizeLarge;
+    line-height: $lineHeightMedium;
+    font-weight: $fontWeight200;
+    padding-bottom: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 500px;
+    @media screen and (max-width: 780px) {
+      max-width: 400px;
+    }
+    @media screen and (max-width: 560px) {
+      max-width: 270px;
+      white-space: normal;
+    }
+  }
+  &__form {}
+  &__input {}
+  &__button {}
+  &__birthday {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__month {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__year {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__account {
+    padding-top: 65px;
+    position: absolute;
+    bottom: 43px;
+    left: 20px;
+    @media screen and (max-width: 610px) {
+      bottom: 25px;
+    }
+    @media screen and (max-width: 390px) {
+      position: static;
+      padding: 0 0 15px;
+      justify-content: center;
+    }
+  }
+}
+
+.button {
+  background: transparent;
+  border: none;
+  font-family: $fontFamilyPTSans;
+  font-style: $fontStyleNormal;
+  font-weight: $fontWeight400;
+  font-size: $fontSizeButton;
+  line-height: $lineHeightButton;
+  color: $colorWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &--inactive {
+    color: #b8b8b8;
+    background: #ededed;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &--nationality {}
+  &--day {}
+  &--month {}
+  &--year {}
+  &__img {}
+  &__shake {
+    animation: shake 0.5s linear 2;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 13px;
+  z-index: 1;
+  @media screen and (max-width: 545px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  @media screen and (max-width: 390px) {
+    justify-content: center;
+  }
+  &__fieldset {}
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    align-self: flex-end;
+  }
+  &__submit {
+    width: 154px;
+    padding: 7px 26px 7px 25px;
+    background-color: $formSubmitBackgroundColor;
+    justify-self: flex-end;
+    margin-top: 84px;
+    grid-column: 2;
+    @media screen and (max-width: 610px) {
+      margin-top: 60px;
+    }
+    @media screen and (max-width: 545px) {
+      margin-top: 20px;
+    }
+  }
+  &__input-error {
+    font-size: $fontSizeUltraSmall;
+    color: $fieldsetErrorBorderColor;
+    transition: 0.3s;
+  }
+  &__input-error-active {
+    opacity: 1;
+  }
+  &__password-wrong {
+    font-size: $fontSizeUltraSmall;
+    color: $fieldsetErrorBorderColor;
+  }
+  &__send {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input {
+  border: 1px solid transparent;
+  outline: none;
+  color: $colorBlack;
+  font-size: $fontSizeMedium;
+  line-height: $lineHeightMedium;
+  background: transparent;
+  padding: 5px 0 7px;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  &::placeholder {
+    font-size: $fontSizeLarge;
+  }
+  &--error {
+    border-bottom: 1px solid $fieldsetErrorBorderColor;
+  }
+  &--first-name {}
+  &--last-name {}
+  &--nationality {}
+  &--email {}
+  &--birthday {}
+  &--month {}
+  &--year {}
+  &--gender {}
+  &--password {}
+  &--confirm-password {}
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  font-family: $fontFamilyWorkSans;
+  font-size: $fontSizeUltraSmall;
+  line-height: $lineHeightUltraSmall;
+  color: $colorGray;
+  border: none;
+  max-width: 235px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $fieldsetBorderColor;
+  position: relative;
+  @media screen and (max-width: 545px) {
+    max-width: 453px;
+    width: 100%;
+  }
+  &--error {
+    border-bottom: 1px solid $fieldsetErrorBorderColor;
+  }
+  &--first-name {}
+  &--last-name {}
+  &--nationality {}
+  &--email {}
+  &--birthday {}
+  &--birthday-container {
+    display: grid;
+    grid-template-columns: 55px 1fr 70px;
+    column-gap: 10px;
+    width: 100%;
+    padding: 4px 0;
+  }
+  &--gender {
+    border-bottom: none;
+    justify-content: start;
+    column-gap: 19px;
+  }
+  &--password {}
+  &--confirm-password {}
+}
+
+.img {}
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  margin: 0;
+  cursor: pointer;
+  @media screen and (max-width: 545px) {
+    padding-top: 4px;
+  }
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:checked+.custom-radio__span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../img/circleRadio.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 6px;
+    }
+    &:disabled+.custom-radio__span {
+      border: 1px solid $colorGray;
+    }
+    &:focus+.custom-radio__span {
+      box-shadow: 0 0 5px $colorBlue;
+    }
+  }
+  &__span {
+    width: 12px;
+    height: 12px;
+    border: 0.7px solid $colorBlue;
+    border-radius: 50%;
+  }
+  &__text {
+    margin: 0;
+    font-family: $fontFamilyWorkSans;
+    color: $colorBlack;
+    font-size: $fontSizeMedium;
+    line-height: $lineHeightMedium;
+  }
+}
+
+.have-account {
+  display: flex;
+  &__text {
+    margin: 0;
+    color: $colorUltraBlack;
+    font-weight: $fontWeight200;
+    font-size: $fontSizeLarge;
+    line-height: $lineHeightSmall;
+    padding-right: 5px;
+    z-index: 1;
+  }
+  &__link {
+    font-weight: $fontWeight200;
+    font-size: $fontSizeMedium;
+    line-height: $lineHeightSmall;
+    color: $colorBlue;
+    z-index: 1;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.select {
+  width: 100%;
+  border: none;
+  font-family: $fontFamilyWorkSans;
+  font-size: $fontSizeMedium;
+  line-height: $lineHeightMedium;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  appearance: none;
+  background-image: url(../img/down.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  cursor: pointer;
+  &__birthday {}
+  &__month {}
+  &__year {}
+}
+
+.pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $popUpShadow;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition05;
+  &--opened {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__overlay {
+    max-width: 120px;
+    width: 100%;
+    position: relative;
+    background-color: $colorWhite;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  &__title {
+    margin: 0;
+    font-family: $fontFamilyPTSans;
+    font-size: $fontSizeH2;
+    line-height: $lineHeightH2;
+  }
+  &__subtitle {
+    margin: 0;
+    font-size: $fontSizeMedium;
+    line-height: $lineHeightMedium;
+  }
+  &__close {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    background-image: url(../img/Close.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      opacity: $popUpCloseOpacity;
+    }
+  }
+}
+
+.sign-up__vivus {
+  width: 438px;
+  height: 363px;
+  position: absolute;
+  right: -67px;
+  bottom: -7px;
+  z-index: 0;
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

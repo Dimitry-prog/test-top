@@ -1,0 +1,24 @@
+.main {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+svg {
+  fill: none;
+  stroke: $colorBlue;
+  stroke-width: 1;
+}
+
+.img {
+  &__doneMark {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition05;
+    padding-left: 5px;
+    &--visibly {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
